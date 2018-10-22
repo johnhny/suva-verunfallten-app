@@ -1,0 +1,4 @@
+/token                https://api.suva.ch:443/token   200
+/claimsmanagement/*     https://api.suva.ch:443/claimsmanagement/:splat   200
+
+/*    /index.html   200

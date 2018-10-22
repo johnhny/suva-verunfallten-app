@@ -27,6 +27,11 @@
                 "output": "assets"
               },
               {
+                "glob": "**/*",
+                "input": "netlify",
+                "output": "."
+              },
+              {
                 "glob": "**/*.svg",
                 "input": "node_modules/@ionic/angular/dist/ionic/svg",
                 "output": "./svg"
@@ -65,7 +70,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "app:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {

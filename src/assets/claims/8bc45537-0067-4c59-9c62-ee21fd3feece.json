@@ -6,5 +6,10 @@
 		}
 	},
 	"firstName": "Stefan",
-	"lastName": "Suter"
+	"lastName": "Suter",
+	"shortDescription": "Foo bar baz",
+	"agency": {
+		"tel": "+41 79 5782385",
+		"email": "suva@example.org"
+	}
 }

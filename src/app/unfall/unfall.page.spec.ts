@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UnfallPage } from './unfall.page';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('UnfallPage', () => {
   let component: UnfallPage;
@@ -9,6 +10,7 @@ describe('UnfallPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [UnfallPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();

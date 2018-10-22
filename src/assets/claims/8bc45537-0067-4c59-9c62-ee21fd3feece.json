@@ -1,0 +1,15 @@
+{
+	"claimStatusRequest": {
+		"birthDate": "1943-06-21",
+		"claimNr": {
+			"nr": "14.20107.97.4"
+		}
+	},
+	"firstName": "Stefan",
+	"lastName": "Suter",
+	"shortDescription": "Keine Unfall vorhanden.",
+	"agency": {
+		"tel": "+41 79 5782385",
+		"email": "suva@example.org"
+	}
+}

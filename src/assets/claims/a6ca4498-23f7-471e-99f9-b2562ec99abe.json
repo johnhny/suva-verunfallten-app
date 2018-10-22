@@ -1,0 +1,15 @@
+{
+	"claimStatusRequest": {
+		"birthDate": "1972-10-07",
+		"claimNr": {
+			"nr": "40.10397.13.3"
+		}
+	},
+	"firstName": "Felix",
+	"lastName": "Weber",
+	"shortDescription": "Surfunfall auf Hawaii. Plötlich war das das Monsterwelle da und !",
+	"agency": {
+		"tel": "+41 79 5782385",
+		"email": "suva@example.org"
+	}
+}

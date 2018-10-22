@@ -1,0 +1,15 @@
+{
+	"claimStatusRequest": {
+		"birthDate": "1996-08-06",
+		"claimNr": {
+			"nr": "24.21807.17.8"
+		}
+	},
+	"firstName": "Susanne",
+	"lastName": "Studer Wacker",
+	"shortDescription": "Auf dem Geschäftsreise nach Oberengadin hat SUVA-Rakete ein Fehlfunktion gebaht. Im Bruchlandung war linkere Beine licht verletzt.",
+	"agency": {
+		"tel": "+41 79 5782385",
+		"email": "suva@example.org"
+	}
+}

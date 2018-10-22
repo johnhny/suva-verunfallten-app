@@ -1,0 +1,15 @@
+{
+	"claimStatusRequest": {
+		"birthDate": "1971-03-09",
+		"claimNr": {
+			"nr": "16.35547.14.2"
+		}
+	},
+	"firstName": "Stefan",
+	"lastName": "Scherrer",
+	"shortDescription": "Während prokollierung von wichtige Entscheidung hat akuter Tennisarm wieter arbeit gesperrt!",
+	"agency": {
+		"tel": "+41 79 5782385",
+		"email": "suva@example.org"
+	}
+}

@@ -59,11 +59,11 @@ export class UnfallPage {
             case 11:
                 return 'folder';
             case 21:
-                return 'folder';
+                return 'checkmark-circle';
             case 31:
-                return 'folder';
+                return 'close-circle-outline';
             case 41:
-                return 'folder';
+                return 'archive';
             default:
                 return '';
         }

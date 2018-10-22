@@ -1,0 +1,14 @@
+{
+	"/token": {
+		"target": "https://api.suva.ch:443",
+		"changeOrigin": true,
+		"secure": true,
+		"logLevel": "debug"
+	},
+	"/claimsmanagement": {
+		"target": "https://api.suva.ch:443",
+		"changeOrigin": true,
+		"secure": true,
+		"logLevel": "debug"
+	}
+}

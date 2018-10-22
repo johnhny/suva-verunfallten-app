@@ -19,13 +19,8 @@ export class UnfallPage {
 
     loadClaimStatus() {
         const claimStatusRequest = {
-            treatmentDate: null,
             birthDate: '1996-08-06',
-            lastname: null,
-            firstname: null,
-            claimNr: {nr: '24.21807.17.8'},
-            svNr: null,
-            accidentDate: null
+            claimNr: {nr: '24.21807.17.8'}
         };
         this.claimStatusService.getClaimStatusInfo(claimStatusRequest)
             .subscribe(claimStatus => this.claimStatus = claimStatus);

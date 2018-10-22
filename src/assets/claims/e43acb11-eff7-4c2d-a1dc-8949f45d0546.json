@@ -1,0 +1,10 @@
+{
+	"claimStatusRequest": {
+		"birthDate": "1971-03-09",
+		"claimNr": {
+			"nr": "16.35547.14.2"
+		}
+	},
+	"firstName": "Stefan",
+	"lastName": "Scherrer"
+}

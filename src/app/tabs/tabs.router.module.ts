@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
-import { HomePage } from '../home/home.page';
+import { UnfallPage } from '../unfall/unfall.page';
 import { AboutPage } from '../about/about.page';
 import { ContactPage } from '../contact/contact.page';
 
@@ -13,13 +13,18 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/tabs/(home:home)',
+        redirectTo: '/tabs/(unfall:unfall)',
         pathMatch: 'full',
       },
       {
-        path: 'home',
-        outlet: 'home',
-        component: HomePage
+        path: 'unfall/:id',
+        outlet: 'unfall',
+        component: UnfallPage
+      },
+      {
+        path: 'unfall',
+        outlet: 'unfall',
+        component: UnfallPage
       },
       {
         path: 'about',
@@ -35,7 +40,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/(home:home)',
+    redirectTo: '/tabs/(unfall:unfall)',
+    pathMatch: 'full'
+  },
+  {
+    path: 'unfall/:id',
+    redirectTo: '/tabs/(unfall:unfall/:id)',
     pathMatch: 'full'
   }
 ];

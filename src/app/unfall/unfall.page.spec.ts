@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UnfallPage } from './unfall.page';
 import {RouterTestingModule} from '@angular/router/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('UnfallPage', () => {
   let component: UnfallPage;
@@ -10,7 +11,7 @@ describe('UnfallPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, HttpClientTestingModule],
       declarations: [UnfallPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();

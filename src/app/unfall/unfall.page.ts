@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ClaimStatusService } from '../shared/claim-status.service';
+import { HttpClient } from '@angular/common/http';
+import { switchMap } from 'rxjs/internal/operators';
+import { filter } from 'rxjs/internal/operators';
+import { Observable } from 'rxjs/index';
 
 @Component({
     selector: 'app-unfall',
@@ -8,21 +12,16 @@ import { ClaimStatusService } from '../shared/claim-status.service';
     styleUrls: ['unfall.page.scss']
 })
 export class UnfallPage {
-    claimStatus: any;
+    claimStatus$: Observable<any>;
 
     constructor(private route: ActivatedRoute,
-                private claimStatusService: ClaimStatusService) {
-        this.route.params.subscribe(params => {
-            console.log('Routerparams: ', params);
-        });
-    }
+                private claimStatusService: ClaimStatusService,
+                private http: HttpClient) {
 
-    loadClaimStatus() {
-        const claimStatusRequest = {
-            birthDate: '1996-08-06',
-            claimNr: {nr: '24.21807.17.8'}
-        };
-        this.claimStatusService.getClaimStatusInfo(claimStatusRequest)
-            .subscribe(claimStatus => this.claimStatus = claimStatus);
+        this.claimStatus$ = this.route.params.pipe(
+            filter(params => !!params.id),
+            switchMap(params => this.http.get<any>(`/assets/claims/${params.id}.json`)),
+            switchMap(data => this.claimStatusService.getClaimStatusInfo(data.claimStatusRequest))
+        );
     }
 }

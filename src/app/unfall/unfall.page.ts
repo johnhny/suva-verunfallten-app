@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ClaimStatusService} from '../shared/claim-status.service';
 import {HttpClient} from '@angular/common/http';
-import {map, switchMap, tap} from 'rxjs/internal/operators';
+import {filter, map, switchMap, tap} from 'rxjs/internal/operators';
 import {from, Observable} from 'rxjs/index';
 import {Storage} from '@ionic/storage';
 
@@ -24,8 +24,8 @@ export class UnfallPage {
             switchMap(params => from(this.localStorage.get('params')).pipe(map(localStorageParams => {
                 return params.id ? params : localStorageParams;
             }))),
-            tap(console.log),
             tap(params => this.localStorage.set('params', params)),
+            filter(params => !!params && !!params.id),
             switchMap(params => this.http.get<any>(`/assets/claims/${params.id}.json`)),
             switchMap(claim => this.claimStatusService.getClaimStatusInfo(claim.claimStatusRequest).pipe(map(claimStatus => {
                 return {...claim, claimStatus};

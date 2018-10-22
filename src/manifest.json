@@ -2,7 +2,7 @@
   "name": "Suva",
   "short_name": "suva",
   "theme_color": "#ff8200",
-  "background_color": "#fafafa",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",

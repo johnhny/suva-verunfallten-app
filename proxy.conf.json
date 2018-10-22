@@ -10,5 +10,11 @@
 		"changeOrigin": true,
 		"secure": true,
 		"logLevel": "debug"
+	},
+	"/app": {
+		"target": "https://www.suva.ch",
+		"changeOrigin": true,
+		"secure": true,
+		"logLevel": "debug"
 	}
 }

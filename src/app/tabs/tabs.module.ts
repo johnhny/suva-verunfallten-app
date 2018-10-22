@@ -9,17 +9,20 @@ import { TabsPage } from './tabs.page';
 import { ContactPageModule } from '../contact/contact.module';
 import { PrevensionPageModule } from '../prevension/prevension.module';
 import { UnfallPageModule } from '../unfall/unfall.module';
+import { FussballtestPageModule } from '../fussballtest/fussballtest.module';
 
 @NgModule({
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule,
-    TabsPageRoutingModule,
-    UnfallPageModule,
-    PrevensionPageModule,
-    ContactPageModule
-  ],
-  declarations: [TabsPage]
+    imports: [
+        IonicModule,
+        CommonModule,
+        FormsModule,
+        TabsPageRoutingModule,
+        UnfallPageModule,
+        PrevensionPageModule,
+        ContactPageModule,
+        FussballtestPageModule
+    ],
+    declarations: [TabsPage]
 })
-export class TabsPageModule {}
+export class TabsPageModule {
+}

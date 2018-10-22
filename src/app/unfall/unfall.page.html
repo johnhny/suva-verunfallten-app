@@ -4,15 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="unfall" padding>
-	<div class="unfallOhneStatus" *ngIf="!claim$ | async as claim">
-		<div class="unfalltitel">Gratualtion. Sie hatten noch keinen Unfall.</div>
-		<ion-button  color="secondary" class="qr-button" (click)="startQRCodeScanner()">QR-Code scannen</ion-button>
-	</div>
-
 <ion-content padding>
-
-	<div *ngIf="claim$ | async as claim">
+	<div *ngIf="claim$ | async as claim; else loading">
 
 		<ion-grid>
 			<ion-row>
@@ -63,3 +56,12 @@
 		</ion-grid>
 	</div>
 </ion-content>
+
+<ng-template #loading>
+	<ion-content class="unfall" padding>
+		<div class="unfallOhneStatus">
+			<div class="unfalltitel">Kein Unfall erfasst.</div>
+			<ion-button  color="secondary" class="qr-button" (click)="startQRCodeScanner()">QR-Code scannen</ion-button>
+		</div>
+	</ion-content>
+</ng-template>

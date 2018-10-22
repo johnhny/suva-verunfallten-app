@@ -17,7 +17,6 @@ ion-icon {
   margin-right: 20px;
 }
 
-
 .unfalltitel {
   position: absolute;
   top: 50%;
@@ -25,6 +24,10 @@ ion-icon {
   width: 100%;
   font-weight: bold;
   color: #ff841b;
+  text-shadow: -1px -1px 4px #fff,
+  1px -1px 4px #fff,
+  -1px 1px 4px #fff,
+  1px 1px 4px #fff;
 }
 
 .unfallOhneStatus {
@@ -35,7 +38,7 @@ ion-icon {
 }
 
 .unfall.hydrated {
-  --background: url("/assets/images/unfall.jpg" ) no-repeat center center fixed;
+  --background: url("/assets/images/unfall.jpg") no-repeat center center fixed;
   --background-size: cover;
 }
 

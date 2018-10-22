@@ -16,3 +16,32 @@ ion-icon {
   font-size: 40px;
   margin-right: 20px;
 }
+
+
+.unfalltitel {
+  position: absolute;
+  top: 50%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #ff841b;
+}
+
+.unfallOhneStatus {
+  height: 90%;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.unfall.hydrated {
+  --background: url("/assets/images/unfall.jpg" ) no-repeat center center fixed;
+  --background-size: cover;
+}
+
+.qr-button {
+  top: 75%;
+  position: relative;
+  --margin-left: auto;
+  --margin-right: auto;
+}

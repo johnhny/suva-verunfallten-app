@@ -1,8 +1,14 @@
-<ion-header>
-	<ion-toolbar color="primary">
-		<ion-title color="light">Unfall</ion-title>
-	</ion-toolbar>
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-title color="light">Home</ion-title>
+  </ion-toolbar>
 </ion-header>
+
+<ion-content class="unfall" padding>
+	<div class="unfallOhneStatus" *ngIf="!claim$ | async as claim">
+		<div class="unfalltitel">Gratualtion. Sie hatten noch keinen Unfall.</div>
+		<ion-button  color="secondary" class="qr-button" (click)="startQRCodeScanner()">QR-Code scannen</ion-button>
+	</div>
 
 <ion-content padding>
 

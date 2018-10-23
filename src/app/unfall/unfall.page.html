@@ -1,6 +1,7 @@
 <ion-content *ngIf="claim$ | async as claim; else loading">
 	<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-		<ion-fab-button href="/tabs/(unfall:scanner)"
+		<ion-fab-button color="secondary"
+		                href="/tabs/(unfall:scanner)"
 		                routerDirection="forward">
 			<ion-icon name="qr-scanner"></ion-icon>
 		</ion-fab-button>

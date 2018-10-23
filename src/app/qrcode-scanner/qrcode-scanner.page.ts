@@ -25,6 +25,7 @@ export class QRCodeScannerPage implements OnDestroy {
         if (cameraDevices && cameraDevices.length > 0) {
             const cameraDevice = this.getRearCamera(cameraDevices);
             this.scanner.startScan(cameraDevice);
+            this.scanner.device = cameraDevice;
         }
     }
 

@@ -18,5 +18,5 @@
 
   <zxing-scanner [device]="cameraDevice"
                  (camerasFound)="camerasFound($event)"
-                 (scanSuccess)="scanSuccess($event)"></zxing-scanner>
+                 (scanSuccess)="scanSuccess($event)" [formats]="['QR_CODE']"></zxing-scanner>
 </ion-content>

@@ -86,7 +86,7 @@ export class UnfallPage {
 
     scanSuccess(data: any) {
         console.log('scanSuccess', data);
-        const targetPage = data.replace('https://suva.netifly.com', '');
+        const targetPage = data.replace('https://suva.netlify.com', '');
         console.log('navigateTo', targetPage);
         this.router.navigateByUrl(targetPage);
     }

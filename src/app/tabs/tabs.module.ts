@@ -11,6 +11,7 @@ import { UnfallPageModule } from '../unfall/unfall.module';
 import { FussballtestPageModule } from '../fussballtest/fussballtest.module';
 import { FitnesstestPageModule } from '../fitnesstest/fitnesstest.module';
 import {AboutPageModule} from '../about/about.module';
+import { DocumentsPageModule } from '../documents/documents.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {AboutPageModule} from '../about/about.module';
         PrevensionPageModule,
         AboutPageModule,
         FussballtestPageModule,
-        FitnesstestPageModule
+        FitnesstestPageModule,
+        DocumentsPageModule
     ],
     declarations: [TabsPage]
 })

@@ -48,6 +48,7 @@ export class QRCodeScannerPage implements OnDestroy {
     }
 
     scanSuccess(data: any) {
+        this.scanner.resetScan();
         const targetPage = data.replace('https://suva.netlify.com', '');
         this.router.navigateByUrl(targetPage);
     }

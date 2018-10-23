@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {ClaimStatusService} from '../shared/claim-status.service';
 import {HttpClient} from '@angular/common/http';
 import {filter, map, switchMap, tap} from 'rxjs/internal/operators';
@@ -18,6 +18,7 @@ export class UnfallPage {
     cameraDevice: any;
 
     constructor(private route: ActivatedRoute,
+                private router: Router,
                 private claimStatusService: ClaimStatusService,
                 private http: HttpClient,
                 private localStorage: Storage) {
@@ -85,6 +86,8 @@ export class UnfallPage {
 
     scanSuccess(data: any) {
         console.log('scanSuccess', data);
-        location.href = data;
+        const targetPage = data.replace('https://suva.netifly.com', '');
+        console.log('navigateTo', targetPage);
+        this.router.navigateByUrl(targetPage);
     }
 }

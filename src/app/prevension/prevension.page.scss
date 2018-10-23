@@ -13,6 +13,10 @@ div.label-container {
   background-color: #fffb;
   display: flex;
   align-items: center;
+
+  img {
+    min-height: 10em;
+  }
 }
 
 div.label {

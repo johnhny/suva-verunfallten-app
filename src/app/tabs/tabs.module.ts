@@ -5,11 +5,13 @@ import {FormsModule} from '@angular/forms';
 
 import {TabsPageRoutingModule} from './tabs.router.module';
 
-import {TabsPage} from './tabs.page';
-import {PrevensionPageModule} from '../prevension/prevension.module';
-import {UnfallPageModule} from '../unfall/unfall.module';
-import {FussballtestPageModule} from '../fussballtest/fussballtest.module';
+import { TabsPage } from './tabs.page';
+import { PrevensionPageModule } from '../prevension/prevension.module';
+import { UnfallPageModule } from '../unfall/unfall.module';
+import { FussballtestPageModule } from '../fussballtest/fussballtest.module';
+import { FitnesstestPageModule } from '../fitnesstest/fitnesstest.module';
 import {AboutPageModule} from '../about/about.module';
+
 
 @NgModule({
     imports: [
@@ -20,7 +22,8 @@ import {AboutPageModule} from '../about/about.module';
         UnfallPageModule,
         PrevensionPageModule,
         AboutPageModule,
-        FussballtestPageModule
+        FussballtestPageModule,
+        FitnesstestPageModule
     ],
     declarations: [TabsPage]
 })

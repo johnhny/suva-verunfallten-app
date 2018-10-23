@@ -6,6 +6,7 @@ import { UnfallPage } from '../unfall/unfall.page';
 import { PrevensionPage } from '../prevension/prevension.page';
 import { FussballtestPage } from '../fussballtest/fussballtest.page';
 import { AboutPage } from '../about/about.page';
+import { FitnesstestPage} from '../fitnesstest/fitnesstest.page';
 
 const routes: Routes = [
     {
@@ -41,6 +42,11 @@ const routes: Routes = [
                 path: 'about',
                 outlet: 'about',
                 component: AboutPage
+            },
+            {
+              path: 'fitnesstest',
+              outlet: 'prevension',
+              component: FitnesstestPage
             }
         ]
     },

@@ -14,6 +14,7 @@ import {Storage} from '@ionic/storage';
 })
 export class UnfallPage {
     claim$: Observable<any>;
+    cameraDevices: any[];
     cameraDevice: any;
 
     constructor(private route: ActivatedRoute,
@@ -71,10 +72,19 @@ export class UnfallPage {
     }
 
     camerasFound(cameraDevices: any) {
-        this.cameraDevice = cameraDevices[0];
+        console.log('camerasFound', cameraDevices);
+        this.cameraDevices = cameraDevices;
+        if (cameraDevices && cameraDevices.length > 0) {
+            this.cameraDevice = cameraDevices.length > 1 ? cameraDevices[1] : cameraDevices[0];
+        }
+    }
+
+    switchCamera() {
+        this.cameraDevice = this.cameraDevices.find(cameraDevice => cameraDevice !== this.cameraDevice);
     }
 
     scanSuccess(data: any) {
         console.log('scanSuccess', data);
+        location.href = data;
     }
 }

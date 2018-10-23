@@ -1,6 +1,10 @@
 a {
   display: block;
   position: relative;
+
+  img {
+    min-height: 10em;
+  }
 }
 
 div.label-container {
@@ -14,9 +18,7 @@ div.label-container {
   display: flex;
   align-items: center;
 
-  img {
-    min-height: 10em;
-  }
+
 }
 
 div.label {

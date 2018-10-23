@@ -10,6 +10,7 @@ import { ContactPageModule } from '../contact/contact.module';
 import { PrevensionPageModule } from '../prevension/prevension.module';
 import { UnfallPageModule } from '../unfall/unfall.module';
 import { FussballtestPageModule } from '../fussballtest/fussballtest.module';
+import { QRCodeScannerPageModule } from '../qrcode-scanner/qrcode-scanner.module';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import { FussballtestPageModule } from '../fussballtest/fussballtest.module';
         UnfallPageModule,
         PrevensionPageModule,
         ContactPageModule,
-        FussballtestPageModule
+        FussballtestPageModule,
+        QRCodeScannerPageModule
     ],
     declarations: [TabsPage]
 })

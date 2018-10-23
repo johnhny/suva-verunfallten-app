@@ -6,6 +6,7 @@ import { UnfallPage } from '../unfall/unfall.page';
 import { PrevensionPage } from '../prevension/prevension.page';
 import { ContactPage } from '../contact/contact.page';
 import { FussballtestPage } from '../fussballtest/fussballtest.page';
+import { QRCodeScannerPage } from '../qrcode-scanner/qrcode-scanner.page';
 
 const routes: Routes = [
     {
@@ -26,6 +27,11 @@ const routes: Routes = [
                 path: 'unfall',
                 outlet: 'unfall',
                 component: UnfallPage
+            },
+            {
+                path: 'scanner',
+                outlet: 'unfall',
+                component: QRCodeScannerPage
             },
             {
                 path: 'prevension',

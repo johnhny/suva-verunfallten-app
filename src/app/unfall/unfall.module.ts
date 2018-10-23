@@ -25,7 +25,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     HttpClientModule,
-    ZXingScannerModule,
     RouterModule.forChild(routes)
   ],
   declarations: [UnfallPage]

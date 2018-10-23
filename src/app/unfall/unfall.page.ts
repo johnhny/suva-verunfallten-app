@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {ClaimStatusService} from '../shared/claim-status.service';
-import {HttpClient} from '@angular/common/http';
-import {filter, map, switchMap, tap} from 'rxjs/internal/operators';
-import {from, Observable} from 'rxjs/index';
-import {Storage} from '@ionic/storage';
+import { ClaimStatusService } from '../shared/claim-status.service';
+import { HttpClient } from '@angular/common/http';
+import { filter, map, switchMap, tap } from 'rxjs/internal/operators';
+import { from, Observable, of } from 'rxjs/index';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -14,8 +14,6 @@ import {Storage} from '@ionic/storage';
 })
 export class UnfallPage {
     claim$: Observable<any>;
-    cameraDevices: any[];
-    cameraDevice: any;
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
@@ -34,6 +32,10 @@ export class UnfallPage {
                 return {...claim, claimStatus};
             })))
         );
+    }
+
+    gotoQRCodeScanner() {
+        this.router.navigate(['/tabs/(unfall:scanner)']);
     }
 
     getStatusText(statementInfoCode: number, claimCloseDate): string {
@@ -70,24 +72,5 @@ export class UnfallPage {
             default:
                 return '';
         }
-    }
-
-    camerasFound(cameraDevices: any) {
-        console.log('camerasFound', cameraDevices);
-        this.cameraDevices = cameraDevices;
-        if (cameraDevices && cameraDevices.length > 0) {
-            this.cameraDevice = cameraDevices.length > 1 ? cameraDevices[1] : cameraDevices[0];
-        }
-    }
-
-    switchCamera() {
-        this.cameraDevice = this.cameraDevices.find(cameraDevice => cameraDevice !== this.cameraDevice);
-    }
-
-    scanSuccess(data: any) {
-        console.log('scanSuccess', data);
-        const targetPage = data.replace('https://suva.netlify.com', '');
-        console.log('navigateTo', targetPage);
-        this.router.navigateByUrl(targetPage);
     }
 }

@@ -29,9 +29,8 @@ export class QRCodeScannerPage implements OnDestroy {
     }
 
     getRearCamera(cameraDevices): any {
-        const defaultCameraDevice = cameraDevices.length > 1 ? cameraDevices[1] : cameraDevices[0];
         const rearCamera = cameraDevices.find(cameraDevice => this.isRearCamera(cameraDevice));
-        return rearCamera || defaultCameraDevice;
+        return rearCamera || cameraDevices[0];
     }
 
     isRearCamera(cameraDevice): boolean {
@@ -41,10 +40,9 @@ export class QRCodeScannerPage implements OnDestroy {
     }
 
     switchCamera() {
-        const cameraDevice = this.cameraDevices.find(cameraDevice => cameraDevice !== this.scanner.device);
+        const cameraDevice = this.cameraDevices.find(cameraDevice => cameraDevice.deviceId !== this.scanner.device.deviceId);
         console.log('switchCamera', cameraDevice);
-        this.scanner.resetScan();
-        this.scanner.startScan(cameraDevice);
+        this.scanner.changeDevice(cameraDevice);
     }
 
     scanSuccess(data: any) {

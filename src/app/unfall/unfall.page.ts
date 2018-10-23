@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ClaimStatusService } from '../shared/claim-status.service';
 import { HttpClient } from '@angular/common/http';
 import { filter, map, switchMap, tap } from 'rxjs/internal/operators';
-import { from, Observable, of } from 'rxjs/index';
+import { from, Observable } from 'rxjs/index';
 import { Storage } from '@ionic/storage';
 
 
@@ -16,7 +16,6 @@ export class UnfallPage {
     claim$: Observable<any>;
 
     constructor(private route: ActivatedRoute,
-                private router: Router,
                 private claimStatusService: ClaimStatusService,
                 private http: HttpClient,
                 private localStorage: Storage) {
@@ -32,10 +31,6 @@ export class UnfallPage {
                 return {...claim, claimStatus};
             })))
         );
-    }
-
-    gotoQRCodeScanner() {
-        this.router.navigate(['/tabs/(unfall:scanner)']);
     }
 
     getStatusText(statementInfoCode: number, claimCloseDate): string {

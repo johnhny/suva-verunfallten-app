@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { Storage } from '@ionic/storage';
-import { ClaimStatusService } from '../shared/claim-status.service';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-qrcode-scanner',
@@ -29,7 +26,6 @@ export class QRCodeScannerPage {
 
     scanSuccess(data: any) {
         const targetPage = data.replace('https://suva.netlify.com', '');
-        console.log('targetPage', targetPage);
         this.router.navigateByUrl(targetPage);
     }
 }

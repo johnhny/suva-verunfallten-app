@@ -14,6 +14,7 @@ import {Storage} from '@ionic/storage';
 })
 export class UnfallPage {
     claim$: Observable<any>;
+    cameraDevice: any;
 
     constructor(private route: ActivatedRoute,
                 private claimStatusService: ClaimStatusService,
@@ -69,8 +70,8 @@ export class UnfallPage {
         }
     }
 
-    camerasFound(data: any) {
-        console.log('camerasFound', data);
+    camerasFound(cameraDevices: any) {
+        this.cameraDevice = cameraDevices[0];
     }
 
     scanSuccess(data: any) {

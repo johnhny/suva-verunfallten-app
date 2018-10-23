@@ -54,6 +54,8 @@
 			<!--<div class="unfalltitel">Kein Unfall erfasst.</div>-->
 			<!--<ion-button  color="secondary" class="qr-button" (click)="startQRCodeScanner()">QR-Code scannen</ion-button>-->
 		<!--</div>-->
-		<zxing-scanner (camerasFound)="camerasFound($event)" (scanSuccess)="scanSuccess($event)"></zxing-scanner>
+		<zxing-scanner [device]="cameraDevice"
+		               (camerasFound)="camerasFound($event)"
+		               (scanSuccess)="scanSuccess($event)"></zxing-scanner>
 	</ion-content>
 </ng-template>

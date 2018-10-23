@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {ClaimStatusService} from '../shared/claim-status.service';
-import {HttpClient} from '@angular/common/http';
-import {filter, map, switchMap, tap} from 'rxjs/internal/operators';
-import {from, Observable} from 'rxjs/index';
-import {Storage} from '@ionic/storage';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ClaimStatusService } from '../shared/claim-status.service';
+import { HttpClient } from '@angular/common/http';
+import { filter, map, switchMap, tap } from 'rxjs/internal/operators';
+import { from, Observable } from 'rxjs/index';
+import { Storage } from '@ionic/storage';
 
 
 @Component({

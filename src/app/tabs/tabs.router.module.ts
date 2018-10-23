@@ -8,6 +8,7 @@ import { FussballtestPage } from '../fussballtest/fussballtest.page';
 import { AboutPage } from '../about/about.page';
 import { FitnesstestPage} from '../fitnesstest/fitnesstest.page';
 import { DocumentsPage } from '../documents/documents.page';
+import { QRCodeScannerPage } from '../qrcode-scanner/qrcode-scanner.page';
 
 const routes: Routes = [
     {
@@ -28,6 +29,11 @@ const routes: Routes = [
                 path: 'unfall',
                 outlet: 'unfall',
                 component: UnfallPage
+            },
+            {
+                path: 'scanner',
+                outlet: 'unfall',
+                component: QRCodeScannerPage
             },
             {
                 path: 'prevension',

@@ -1,61 +1,91 @@
-<ion-content *ngIf="claim$ | async as claim; else loading" padding>
-		<ion-grid>
-			<ion-row>
-				<ion-col size="12">
-					<div class="state">
-						<ion-text color="primary">Schadennummer</ion-text>
-						<ion-text color="medium"><h2>{{ claim.claimStatus.claimNr.nr }}</h2></ion-text>
+<ion-content *ngIf="claim$ | async as claim; else loading">
+	<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+		<ion-fab-button color="secondary"
+		                href="/tabs/(unfall:scanner)"
+		                routerDirection="forward">
+			<ion-icon name="qr-scanner"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
+	<ion-grid padding>
+		<ion-row>
+			<ion-col size="12">
+				<div class="state">
+					<ion-text color="primary">Schadennummer</ion-text>
+					<ion-text color="medium"><h2>{{ claim.claimStatus.claimNr.nr }}</h2></ion-text>
+				</div>
+			</ion-col>
+			<ion-col size="12">
+				<div class="state">
+					<div class="d-flex">
+						<h2 class="icon">
+							<ion-icon [name]="getStatusIcon(claim.claimStatus.statementInfoCode)"
+							          color="primary"></ion-icon>
+						</h2>
+						<h2>
+							<ion-text color="primary">{{ getStatusText(claim.claimStatus.statementInfoCode,
+								claim.claimStatus.claimCloseDate) }}
+							</ion-text>
+						</h2>
 					</div>
-				</ion-col>
-				<ion-col size="12">
-					<div class="state">
-						<div class="d-flex">
-							<h2 class="icon"><ion-icon [name]="getStatusIcon(claim.claimStatus.statementInfoCode)"color="primary"></ion-icon></h2>
-							<h2><ion-text color="primary">{{ getStatusText(claim.claimStatus.statementInfoCode, claim.claimStatus.claimCloseDate) }}</ion-text></h2>
-						</div>
-					</div>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col size="12">
-					<div><ion-text color="medium">Kurzbeschreibung</ion-text></div>
-					<ion-text color="primary">{{claim.shortDescription}}</ion-text>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col [size]="12">
-					<div><ion-text color="medium">Schadendatum</ion-text></div>
-					<ion-text color="primary">{{ claim.claimStatus.accidentDate | date: "dd.MM.y" }}</ion-text>
-				</ion-col>
-				<ion-col [size]="12">
-					<div><ion-text color="medium">Abschlussdatum</ion-text></div>
-					<ion-text color="primary">{{ claim.claimStatus.claimCloseDate | date: "dd.MM.y"}}</ion-text>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col [size]="12">
-					<div><ion-text color="medium">Stellungsname</ion-text></div>
-					<ion-text color="primary">{{ claim.claimStatus.statement }}</ion-text>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col [size]="12" class="contact">
-					<div><ion-text color="medium">{{ claim.claimStatus.agency}}</ion-text></div>
-					<a href="tel:{{claim.agency.tel}}"><ion-icon name="call" color="primary"></ion-icon></a>
-					<a href="mailto:{{claim.agency.email}}"><ion-icon name="mail" color="primary"></ion-icon></a>
-				</ion-col>
-			</ion-row>
-			<ion-button  color="primary" class="qr-button" href="/tabs/(unfall:documents)">
-				<ion-text color="light">Dokumente zu diesem Fall</ion-text>
-			</ion-button>
-		</ion-grid>
+				</div>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="12">
+				<div>
+					<ion-text color="medium">Kurzbeschreibung</ion-text>
+				</div>
+				<ion-text color="primary">{{claim.shortDescription}}</ion-text>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col [size]="12">
+				<div>
+					<ion-text color="medium">Schadendatum</ion-text>
+				</div>
+				<ion-text color="primary">{{ claim.claimStatus.accidentDate | date: "dd.MM.y" }}</ion-text>
+			</ion-col>
+			<ion-col [size]="12">
+				<div>
+					<ion-text color="medium">Abschlussdatum</ion-text>
+				</div>
+				<ion-text color="primary">{{ claim.claimStatus.claimCloseDate | date: "dd.MM.y"}}</ion-text>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col [size]="12">
+				<div>
+					<ion-text color="medium">Stellungsname</ion-text>
+				</div>
+				<ion-text color="primary">{{ claim.claimStatus.statement }}</ion-text>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col [size]="12" class="contact">
+				<div>
+					<ion-text color="medium">{{ claim.claimStatus.agency}}</ion-text>
+				</div>
+				<a href="tel:{{claim.agency.tel}}">
+					<ion-icon name="call" color="primary"></ion-icon>
+				</a>
+				<a href="mailto:{{claim.agency.email}}">
+					<ion-icon name="mail" color="primary"></ion-icon>
+				</a>
+			</ion-col>
+		</ion-row>
+		<ion-button color="primary" class="qr-button" href="/tabs/(unfall:documents)">
+			<ion-text color="light">Dokumente zu diesem Fall</ion-text>
+		</ion-button>
+	</ion-grid>
 </ion-content>
 
 <ng-template #loading>
 	<ion-content class="unfall">
 		<div class="unfallOhneStatus">
 			<div class="unfalltitel">Kein Unfall erfasst.</div>
-			<ion-button  color="secondary" class="qr-button" (click)="startQRCodeScanner()">QR-Code scannen</ion-button>
+			<ion-button color="secondary" class="qr-button" href="/tabs/(unfall:scanner)"
+			            routerDirection="forward">QR-Code scannen
+			</ion-button>
 		</div>
 	</ion-content>
 </ng-template>

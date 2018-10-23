@@ -28,7 +28,7 @@ export class QRCodeScannerPage {
     switchCamera() {
         //this.cameraDevice = this.cameraDevices.find(cameraDevice => cameraDevice !== this.cameraDevice);
         const cameraDevice = this.cameraDevices.find(cameraDevice => cameraDevice !== this.scanner.device);
-        this.scanner.resetScan();
+        //this.scanner.resetScan();
         this.scanner.startScan(cameraDevice);
     }
 

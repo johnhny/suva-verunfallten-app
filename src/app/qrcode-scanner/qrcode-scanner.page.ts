@@ -43,7 +43,6 @@ export class QRCodeScannerPage implements OnDestroy {
 
     switchCamera() {
         const cameraDevice = this.cameraDevices.find(cameraDevice => cameraDevice.deviceId !== this.scanner.device.deviceId);
-        console.log('switchCamera', cameraDevice, this.scanner.device);
         this.scanner.changeDevice(cameraDevice);
         this.scanner.device = cameraDevice;
     }

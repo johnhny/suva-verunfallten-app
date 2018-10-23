@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { UnfallPage } from '../unfall/unfall.page';
 import { PrevensionPage } from '../prevension/prevension.page';
-import { ContactPage } from '../contact/contact.page';
 import { FussballtestPage } from '../fussballtest/fussballtest.page';
+import { AboutPage } from '../about/about.page';
 import { FitnesstestPage} from '../fitnesstest/fitnesstest.page';
 
 const routes: Routes = [
@@ -39,14 +39,14 @@ const routes: Routes = [
                 component: FussballtestPage
             },
             {
-                path: 'fitnesstest',
-                outlet: 'prevension',
-                component: FitnesstestPage
+                path: 'about',
+                outlet: 'about',
+                component: AboutPage
             },
             {
-                path: 'contact',
-                outlet: 'contact',
-                component: ContactPage
+              path: 'fitnesstest',
+              outlet: 'prevension',
+              component: FitnesstestPage
             }
         ]
     },

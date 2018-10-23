@@ -29,6 +29,7 @@ export class QRCodeScannerPage {
 
     scanSuccess(data: any) {
         const targetPage = data.replace('https://suva.netlify.com', '');
+        console.log('targetPage', targetPage);
         this.router.navigateByUrl(targetPage);
     }
 }

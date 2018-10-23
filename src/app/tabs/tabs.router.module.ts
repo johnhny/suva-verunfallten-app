@@ -7,6 +7,7 @@ import { PrevensionPage } from '../prevension/prevension.page';
 import { FussballtestPage } from '../fussballtest/fussballtest.page';
 import { AboutPage } from '../about/about.page';
 import { FitnesstestPage} from '../fitnesstest/fitnesstest.page';
+import { DocumentsPage } from '../documents/documents.page';
 
 const routes: Routes = [
     {
@@ -47,6 +48,11 @@ const routes: Routes = [
               path: 'fitnesstest',
               outlet: 'prevension',
               component: FitnesstestPage
+            },
+            {
+              path: 'documents',
+              outlet: 'unfall',
+              component: DocumentsPage
             }
         ]
     },

@@ -68,4 +68,12 @@ export class UnfallPage {
                 return '';
         }
     }
+
+    camerasFound(data: any) {
+        console.log('camerasFound', data);
+    }
+
+    scanSuccess(data: any) {
+        console.log('scanSuccess', data);
+    }
 }

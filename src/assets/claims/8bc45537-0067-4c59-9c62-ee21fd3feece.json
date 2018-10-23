@@ -1,13 +1,13 @@
 {
 	"claimStatusRequest": {
-		"birthDate": "1943-06-21",
+		"birthDate": "1972-10-07",
 		"claimNr": {
-			"nr": "14.20107.97.4"
+			"nr": "40.10397.13.3"
 		}
 	},
 	"firstName": "Stefan",
 	"lastName": "Suter",
-	"shortDescription": "Keine Unfall vorhanden.",
+	"shortDescription": "Heisse Kaffee hat Haut von linkere Hand verbrannt.",
 	"agency": {
 		"tel": "+41 79 5782385",
 		"email": "suva@example.org"

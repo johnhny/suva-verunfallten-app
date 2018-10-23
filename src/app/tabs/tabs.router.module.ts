@@ -4,8 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { UnfallPage } from '../unfall/unfall.page';
 import { PrevensionPage } from '../prevension/prevension.page';
-import { ContactPage } from '../contact/contact.page';
 import { FussballtestPage } from '../fussballtest/fussballtest.page';
+import { AboutPage } from '../about/about.page';
+import { FitnesstestPage} from '../fitnesstest/fitnesstest.page';
+import { DocumentsPage } from '../documents/documents.page';
 import { QRCodeScannerPage } from '../qrcode-scanner/qrcode-scanner.page';
 
 const routes: Routes = [
@@ -44,9 +46,19 @@ const routes: Routes = [
                 component: FussballtestPage
             },
             {
-                path: 'contact',
-                outlet: 'contact',
-                component: ContactPage
+                path: 'about',
+                outlet: 'about',
+                component: AboutPage
+            },
+            {
+              path: 'fitnesstest',
+              outlet: 'prevension',
+              component: FitnesstestPage
+            },
+            {
+              path: 'documents',
+              outlet: 'unfall',
+              component: DocumentsPage
             }
         ]
     },

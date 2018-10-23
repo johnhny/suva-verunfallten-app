@@ -1,0 +1,70 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button color="light" defaultHref="/tabs/(unfall:unfall)"></ion-back-button>
+		</ion-buttons>
+		<ion-title color="light">Dokumente zum Fall</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="outer-content">
+	<ion-list>
+		<ion-list-header>
+			Rechnungen
+		</ion-list-header>
+
+		<ion-item>
+			<ion-icon name="document" item-start ></ion-icon>
+			<ion-label>Arztrechnung 28.13.2018</ion-label>
+			<button ion-button outline item-end (click)="openPDF('https://www.medforms.ch/formTemplates/medforms.40.40.10.5040_de.pdf')">Download</button>
+		</ion-item>
+		<ion-item>
+			<ion-icon name="document" item-start ></ion-icon>
+			<ion-label>Arztrechnung 32.12.2018</ion-label>
+			<button ion-button outline item-end (click)="openPDF('https://www.medforms.ch/formTemplates/medforms.40.40.10.5040_de.pdf')">Download</button>
+		</ion-item>
+		<ion-item>
+			<ion-icon name="document" item-start ></ion-icon>
+			<ion-label>Spitalrechnung 31.02.2018</ion-label>
+			<button ion-button outline item-end (click)="openPDF('https://www.medforms.ch/formTemplates/medforms.40.40.10.5040_de.pdf')">Download</button>
+		</ion-item>
+
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			Suva
+		</ion-list-header>
+
+		<ion-item>
+			<ion-icon name="document" item-start ></ion-icon>
+			<ion-label>Unfallschein UVG 31.02.2017</ion-label>
+			<button ion-button outline item-end (click)="openPDF('https://www.medforms.ch/formTemplates/medforms.40.40.10.5040_de.pdf')">Download</button>
+		</ion-item><ion-item>
+			<ion-icon name="document" item-start ></ion-icon>
+			<ion-label>Leistungsabrechnung 31.02.2018</ion-label>
+			<button ion-button outline item-end (click)="openPDF('https://www.medforms.ch/formTemplates/medforms.40.40.10.5040_de.pdf')">Download</button>
+		</ion-item>
+		<ion-item>
+			<ion-icon name="document" item-start ></ion-icon>
+			<ion-label>Leistungsabrechnung 31.12.2018</ion-label>
+			<button ion-button outline item-end (click)="openPDF('https://www.medforms.ch/formTemplates/medforms.40.40.10.5040_de.pdf')">Download</button>
+		</ion-item>
+		<ion-item>
+			<ion-icon name="document" item-start ></ion-icon>
+			<ion-label>Leistungsabrechnung 31.12.2018</ion-label>
+			<button ion-button outline item-end (click)="openPDF('https://www.medforms.ch/formTemplates/medforms.40.40.10.5040_de.pdf')">Download</button>
+		</ion-item>
+		<ion-item>
+			<ion-icon name="document" item-start ></ion-icon>
+			<ion-label>Leistungsabrechnung 31.12.2018</ion-label>
+			<button ion-button outline item-end (click)="openPDF('https://www.medforms.ch/formTemplates/medforms.40.40.10.5040_de.pdf')">Download</button>
+		</ion-item>
+
+	</ion-list>
+
+	<ion-button  color="primary" class="qr-button" href="">
+		<ion-text color="light">Rechnung scannen</ion-text>
+	</ion-button>
+
+</ion-content>

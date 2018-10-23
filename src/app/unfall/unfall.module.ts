@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UnfallPage } from './unfall.page';
 import { HttpClientModule } from '@angular/common/http';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 const routes: Routes = [
     {
@@ -24,6 +25,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     HttpClientModule,
+    ZXingScannerModule,
     RouterModule.forChild(routes)
   ],
   declarations: [UnfallPage]

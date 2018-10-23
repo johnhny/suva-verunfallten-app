@@ -50,9 +50,10 @@
 
 <ng-template #loading>
 	<ion-content class="unfall">
-		<div class="unfallOhneStatus">
-			<div class="unfalltitel">Kein Unfall erfasst.</div>
-			<ion-button  color="secondary" class="qr-button" (click)="startQRCodeScanner()">QR-Code scannen</ion-button>
-		</div>
+		<!--<div class="unfallOhneStatus">-->
+			<!--<div class="unfalltitel">Kein Unfall erfasst.</div>-->
+			<!--<ion-button  color="secondary" class="qr-button" (click)="startQRCodeScanner()">QR-Code scannen</ion-button>-->
+		<!--</div>-->
+		<zxing-scanner [formats]="['QR_CODE', 'EAN_13', 'CODE_128', 'DATA_MATRIX']"></zxing-scanner>
 	</ion-content>
 </ng-template>
